@@ -1,0 +1,9 @@
+.hero-image {
+  background: linear-gradient(90deg, rgba(6, 52, 50, .96) 0%, rgba(7, 59, 57, .84) 38%, rgba(7, 59, 57, .18) 75%), var(--hero-image) center right / cover no-repeat;
+}
+
+@media (max-width: 760px) {
+  .hero-image {
+    background: linear-gradient(90deg, rgba(6, 52, 50, .95) 0%, rgba(7, 59, 57, .83) 73%, rgba(7, 59, 57, .55)), var(--hero-image) 65% center / cover no-repeat;
+  }
+}

@@ -1,0 +1,13 @@
+---
+import Logo from './Logo.astro';
+const links = [['Home','/'],['About','/about/'],['Our DFLs','/our-dfls/'],['Technology & Quality','/technology-quality/'],['For Farmers','/for-farmers/'],['For Distributors','/for-distributors/'],['Resources','/resources/'],['Contact','/contact/']];
+const current = Astro.url.pathname.replace(import.meta.env.BASE_URL, '/');
+---
+<header class="site-header">
+  <div class="topbar"><div class="wrap topbar-inner"><span>Healthy beginnings for stronger silk production.</span><span><a href="tel:+910000000000">Call: +91 00000 00000</a><a href="https://wa.me/910000000000" target="_blank" rel="noreferrer">WhatsApp</a></span></div></div>
+  <div class="wrap navrow"><Logo /><button class="menu-toggle" aria-label="Open menu" aria-expanded="false">Menu <span></span></button><nav aria-label="Primary navigation"><ul>{links.map(([label, href]) => <li><a class:list={{active: current === href}} href={href}>{label}</a></li>)}</ul></nav><a class="button button-small" href="/contact/#enquiry">Enquire now</a></div>
+</header>
+<script>
+  const button = document.querySelector('.menu-toggle'); const nav = document.querySelector('.site-header nav');
+  button?.addEventListener('click', () => { const open = nav?.classList.toggle('open'); button.setAttribute('aria-expanded', String(open)); });
+</script>
